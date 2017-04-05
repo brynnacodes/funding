@@ -1,0 +1,49 @@
+<h3>Edit Listed Project:</h3>
+<div class="row">
+  <div class="col-sm-6">
+    <div>
+      <label>Title:</label>
+      <br>
+      <input [(ngModel)]="selectedProject.title">
+    </div>
+
+    <div>
+      <label>Author:</label>
+      <br>
+      <input [(ngModel)]="selectedProject.author">
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <br>
+      <textarea [(ngModel)]="selectedProject.description"></textarea>
+    </div>
+
+    <div>
+      <label>Image Link:</label>
+      <br>
+      <input [(ngModel)]="selectedProject.image">
+    </div>
+
+    <div>
+      <label>Funding Goal:</label>
+      <br>
+      <input type="number" [(ngModel)]="selectedProject.totalFunding">
+    </div>
+
+    <div>
+      <label>Funds Raised:</label>
+      <br>
+      <input type="number" [(ngModel)]="selectedProject.currentFunding">
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div *ngFor="let category of categories" [(ngModel)]="selectedProject.category">
+      <label>{{category.display}}</label>
+      <input type="checkbox" value="{{category.value}}"
+        (click)="check(category.value)">
+    </div>
+  </div>
+  <button class="btn" (click)="beginUpdatingProject(selectedProject)">Update</button>
+</div>
