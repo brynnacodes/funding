@@ -23,7 +23,7 @@ export class ProjectService {
   }
 
   updateProject(localUpdateProject) {
-  const projectEntryInFirebase = this.getProjectById(localUpdateProject.$key);
+  let projectEntryInFirebase = this.getProjectById(localUpdateProject.$key);
   projectEntryInFirebase.update({title: localUpdateProject.title,
                                 author: localUpdateProject.author,
                                 description: localUpdateProject.description,
@@ -32,5 +32,10 @@ export class ProjectService {
                                 currentFunding: localUpdateProject.currentFunding,
                                 categories: localUpdateProject.categories
                               });
+  }
+
+  deleteProject(localProjectToDelete) {
+    let projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
+    projectEntryInFirebase.remove();
   }
  }
