@@ -1,4 +1,4 @@
-<div *ngFor="let project of projects">
+<div *ngFor="let project of projects" (click)="goToProject(project)">
   <ul>
     <h3>{{project.title}} <span>- {{project.author}}</span></h3>
     <img src="{{project.image}}" alt="{{project.title}}" />

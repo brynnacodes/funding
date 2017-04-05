@@ -19,4 +19,9 @@ export class ListingComponent implements OnInit {
       this.projects = snap;
     })
   }
+
+  goToProject(project) {
+    console.log(project);
+    this.router.navigate(['project', project.$key]);
+  };
 }
