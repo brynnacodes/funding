@@ -3,5 +3,9 @@
 </p>
 
 <div>
-  {{(projectToDisplay | async)?.title}} 
+  <p>{{(projectToDisplay | async)?.title}}</p>
+  <img src="{{(projectToDisplay | async)?.image}}" alt="{{(projectToDisplay | async)?.title}}"/>
+  <p>{{(projectToDisplay | async)?.author}}</p>
+  <p>{{(projectToDisplay | async)?.description}}</p>
+  <p>{{(projectToDisplay | async)?.currentFunding}} raised of {{(projectToDisplay | async)?.totalFunding}}</p>
 </div>

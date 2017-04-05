@@ -17,11 +17,11 @@ export class ListingComponent implements OnInit {
   ngOnInit() {
     this.ProjectService.getProjects().subscribe( snap => {
       this.projects = snap;
-    })
+    });
   }
 
   goToProject(project) {
     console.log(project);
     this.router.navigate(['project', project.$key]);
-  };
+  }
 }

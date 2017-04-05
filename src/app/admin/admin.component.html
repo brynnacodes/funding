@@ -1,0 +1,45 @@
+<p>
+  admin works!
+</p>
+
+<h3>Add New Project to Inventory</h3>
+<div>
+  <div>
+    <label>Project Title:</label>
+    <br>
+    <input #newTitle>
+  </div>
+
+  <div>
+    <label>Project Author:</label>
+    <br>
+    <input #newAuthor>
+  </div>
+
+  <div>
+    <label>Project Image Link:</label>
+    <br>
+    <input #newImage>
+  </div>
+
+  <div>
+    <label>Project Funding Goal:</label>
+    <br>
+    <input type="number" #newTotalFunding required>
+  </div>
+
+  <div>
+    <label>Project Funds Raised:</label>
+    <br>
+    <input type="number" #newCurrentFunding required>
+  </div>
+
+  <div *ngFor="let category of categories">
+    <label>{{category.display}}</label>
+    <br>
+    <input type="checkbox" value="{{category.value}}"
+      (click)="check(category.value)">
+  </div>
+</div>
+<button (click)="submitForm(newTitle.value, newAuthor.value, newImage.value, newTotalFunding.value, newCurrentFunding.value)">Submit</button>
+<app-listing></app-listing>
