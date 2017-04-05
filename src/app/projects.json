@@ -1,0 +1,11 @@
+{
+  "projects": [{
+    "title": "Save the dirt",
+    "author": "Kermit the Frog",
+    "description": "It takes almost 10,000 years to create 1 inch of topsoil..we're losing an inch per year in the U.S.",
+    "image": "http://www.rodalesorganiclife.com/sites/rodalesorganiclife.com/files/articles/2015/09/soil_in_hands_-_francesca_yorke.jpg",
+    "totalFunding": 300000000000,
+    "currentFunding": 100000,
+    "categories": ["environment", "science", "space"]
+    }]
+}
