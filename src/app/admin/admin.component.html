@@ -1,45 +1,55 @@
-<p>
-  admin works!
-</p>
-
+<h1>Admin Tools</h1>
 <h3>Add New Project to Inventory</h3>
-<div>
-  <div>
-    <label>Project Title:</label>
-    <br>
-    <input #newTitle>
+<div class="row">
+  <div class="col-sm-6">
+    <div>
+      <label>Title:</label>
+      <br>
+      <input #newTitle>
+    </div>
+
+    <div>
+      <label>Author:</label>
+      <br>
+      <input #newAuthor>
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <br>
+      <textarea #newDescription></textarea>
+    </div>
+
+    <div>
+      <label>Image Link:</label>
+      <br>
+      <input #newImage>
+    </div>
+
+    <div>
+      <label>Funding Goal:</label>
+      <br>
+      <input type="number" #newTotalFunding required>
+    </div>
+
+    <div>
+      <label>Funds Raised:</label>
+      <br>
+      <input type="number" #newCurrentFunding required>
+    </div>
   </div>
 
-  <div>
-    <label>Project Author:</label>
-    <br>
-    <input #newAuthor>
+  <div class="col-sm-6">
+    <div *ngFor="let category of categories">
+      <label>{{category.display}}</label>
+      <input type="checkbox" value="{{category.value}}"
+        (click)="check(category.value)">
+    </div>
   </div>
-
-  <div>
-    <label>Project Image Link:</label>
-    <br>
-    <input #newImage>
-  </div>
-
-  <div>
-    <label>Project Funding Goal:</label>
-    <br>
-    <input type="number" #newTotalFunding required>
-  </div>
-
-  <div>
-    <label>Project Funds Raised:</label>
-    <br>
-    <input type="number" #newCurrentFunding required>
-  </div>
-
-  <div *ngFor="let category of categories">
-    <label>{{category.display}}</label>
-    <br>
-    <input type="checkbox" value="{{category.value}}"
-      (click)="check(category.value)">
+  <button class="btn" (click)="submitForm(newTitle.value, newAuthor.value, newDescription.value, newImage.value, newTotalFunding.value, newCurrentFunding.value)">Submit</button>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <app-listing></app-listing>
   </div>
 </div>
-<button (click)="submitForm(newTitle.value, newAuthor.value, newImage.value, newTotalFunding.value, newCurrentFunding.value)">Submit</button>
-<app-listing></app-listing>

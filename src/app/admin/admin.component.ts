@@ -33,7 +33,7 @@ export class AdminComponent implements OnInit {
       categories: this.updateCheckedCat
     };
 
-    // this.ProjectService.saveProject(newProject);
+    this.ProjectService.addProject(newProject);
   }
 
   public categories = [
