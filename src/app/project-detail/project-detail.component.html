@@ -5,3 +5,7 @@
   <p>{{(projectToDisplay | async)?.description}}</p>
   <p>${{(projectToDisplay | async)?.currentFunding}} raised out of ${{(projectToDisplay | async)?.totalFunding}}</p>
 </div>
+
+<label>Give me your money!</label>
+<input type="number" [(ngModel)]="donation">
+<button (click)="beginDonateProject()">Donate</button>

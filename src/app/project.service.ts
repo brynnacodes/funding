@@ -38,4 +38,9 @@ export class ProjectService {
     let projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
     projectEntryInFirebase.remove();
   }
+
+  // donate(localDonateProject, newCurrentFunding) {
+  //   let projectEntryInFirebase = this.getProjectById(localDonateProject.$key);
+  //   projectEntryInFirebase.update({currentFunding: newCurrentFunding});
+  // }
  }
