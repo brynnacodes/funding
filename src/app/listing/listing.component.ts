@@ -12,6 +12,7 @@ import { ProjectService } from './../project.service';
 export class ListingComponent implements OnInit {
   projects;
   currentRoute: string = this.router.url;
+  filterByFunding: string = "allProjects";
 
   constructor(private ProjectService: ProjectService, private router: Router) { }
 
@@ -24,5 +25,9 @@ export class ListingComponent implements OnInit {
   goToProject(project) {
     console.log(project);
     this.router.navigate(['project', project.$key]);
+  }
+
+  onChange(optionFromMenu: string) {
+    this.filterByFunding = optionFromMenu;
   }
 }
